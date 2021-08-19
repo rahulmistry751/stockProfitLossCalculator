@@ -10,17 +10,16 @@ const container=document.querySelector(".container");
 // Event listeners
 checkBtn.addEventListener("click",(e)=>{
     e.preventDefault();
-    if(purchasePrice.value<=0 || currentPrice.value<=0 ||purchasePrice.value=="" || currentPrice.value<=0 || numOfStocks.value<=0 || numOfStocks.value==""){
+    if(!purchasePrice.value || !currentPrice.value || !numOfStocks.value ){
         show.style.color="red";
         show.innerText="Please enter price greater than 0";
-        container.style.background="#abe9cd";
         container.style.backgroundImage="linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);"
-        show.textContent="";
         illustrate.textContent="";
     }
     else{
         container.style.background="#abe9cd";
         container.style.backgroundImage="linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);"
+        show.style.color="";
         checkPL();
     }
 })
